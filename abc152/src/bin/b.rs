@@ -1,9 +1,13 @@
-use proconio::input;
+use competitive_hpp::prelude::*;
 
+#[fastout]
 fn main() {
     input! {
-        a: i32,
+        a: usize, b: usize,
     }
 
-    println!("{}", a)
+    let n = format!("{}", a).repeat(b);
+    let m = format!("{}", b).repeat(a);
+
+    println!("{}", String::min(n, m))
 }

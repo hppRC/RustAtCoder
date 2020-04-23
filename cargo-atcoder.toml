@@ -17,7 +17,7 @@ panic = 'abort'
 
 # dependencies added to new project
 [dependencies]
-proconio = "*"
+competitive-hpp = "*"
 # competitive = { git = "https://github.com/tanakh/competitive-rs.git" }
 
 [project]
@@ -26,8 +26,9 @@ proconio = "*"
 
 # source code template
 template = """
-use proconio::input;
+use competitive_hpp::prelude::*;
 
+#[fastout]
 fn main() {
     input! {
         a: i32,

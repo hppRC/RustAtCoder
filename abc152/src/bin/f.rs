@@ -1,4 +1,4 @@
-use proconio::input;
+use competitive_hpp::prelude::*;
 
 fn main() {
     input! {
