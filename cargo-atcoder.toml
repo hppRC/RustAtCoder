@@ -26,6 +26,7 @@ competitive-hpp = "*"
 
 # source code template
 template = """
+#![allow(non_snake_case)]
 use competitive_hpp::prelude::*;
 
 #[fastout]

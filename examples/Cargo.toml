@@ -1,0 +1,12 @@
+[package]
+name = "example"
+version = "0.1.0"
+authors = ["hppRC <hpp.ricecake@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+competitive-hpp = "*"
+
+[profile.release]
+lto = true
+panic = 'abort'
