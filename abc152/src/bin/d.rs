@@ -7,7 +7,6 @@ fn main() {
     }
 
     let mut counts = vec![vec![0; 10]; 10];
-
     for i in 1..=n {
         let a = i.leftmost_digit() as usize;
         let b = i.rightmost_digit() as usize;
