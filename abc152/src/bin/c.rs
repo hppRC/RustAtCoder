@@ -6,16 +6,15 @@ fn main() {
         n: u64,
         p: [u64; n]
     }
+    let p: Vec<u64> = p;
 
-    let mut min_of_left = p[0];
-    let mut ans = 0;
-
-    for pj in p {
-        if min_of_left >= pj {
-            min_of_left = pj;
-            ans += 1;
+    let (_, ans) = p.iter().fold((p[0], 0), |(min_of_left, ans), &pi| {
+        if min_of_left >= pi {
+            (pi, ans + 1)
+        } else {
+            (min_of_left, ans)
         }
-    }
+    });
 
-    println!("{}", ans)
+    println!("{:?}", ans);
 }

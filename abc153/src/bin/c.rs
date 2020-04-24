@@ -11,5 +11,5 @@ fn main() {
     H.sort();
     H.reverse();
 
-    println!("{}", (K..H.len()).map(|i| H[i]).sum::<usize>())
+    println!("{}", (K..H.len()).fold(0, |sum, i| sum + H[i]))
 }

@@ -5,8 +5,9 @@ use competitive_hpp::prelude::*;
 fn main() {
     input! {
         H: usize, N:usize,
-        A: [usize; N]
+        A: [usize; N],
     }
+    let A: Vec<usize> = A;
 
-    println!("{}", YesNo(A.iter().sum::<usize>() >= H))
+    println!("{}", YesNo(A.iter().sum() >= H))
 }

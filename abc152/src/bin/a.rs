@@ -6,5 +6,5 @@ fn main() {
         n: i64,m: i64,
     }
 
-    println!("{}", if n == m { "Yes" } else { "No" })
+    println!("{}", YesNo(n == m))
 }
