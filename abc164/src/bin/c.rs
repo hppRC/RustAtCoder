@@ -4,8 +4,14 @@ use competitive_hpp::prelude::*;
 #[fastout]
 fn main() {
     input! {
-        a: i32,
+        N:usize,
+        S:[String; N],
     }
 
-    println!("{}", a)
+    let mut set: HashSet<String> = HashSet::new();
+    for s in S {
+        set.insert(s);
+    }
+
+    println!("{}", set.len());
 }

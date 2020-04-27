@@ -4,8 +4,22 @@ use competitive_hpp::prelude::*;
 #[fastout]
 fn main() {
     input! {
-        a: i32,
+        mut A:isize,
+        B:isize,
+        mut C:isize,
+        D:isize,
     }
 
-    println!("{}", a)
+    loop {
+        C -= B;
+        if C <= 0 {
+            println!("Yes");
+            break;
+        }
+        A -= D;
+        if A <= 0 {
+            println!("No");
+            break;
+        }
+    }
 }

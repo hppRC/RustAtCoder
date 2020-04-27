@@ -4,8 +4,8 @@ use competitive_hpp::prelude::*;
 #[fastout]
 fn main() {
     input! {
-        a: i32,
+        S:usize, W:usize,
     }
 
-    println!("{}", a)
+    println!("{}", if S <= W { "unsafe" } else { "safe" })
 }
