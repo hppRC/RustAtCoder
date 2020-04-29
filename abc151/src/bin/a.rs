@@ -3,6 +3,7 @@ use competitive_hpp::prelude::*;
 
 #[fastout]
 fn main() {
+    // test
     input! {
         c: char
     }
