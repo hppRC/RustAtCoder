@@ -1,0 +1,7 @@
+[tasks.prepare]
+description = "Preparing for a new contest..."
+script = ['''
+#!/usr/bin/env fish
+
+cargo atcoder new $argv -b {a,b,c,d,e,f}
+    ''']
