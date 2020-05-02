@@ -1,7 +1,21 @@
 [tasks.prepare]
 description = "Preparing for a new contest..."
-script = ['''
+script = [
+    '''
 #!/usr/bin/env fish
 
 cargo atcoder new $argv -b {a,b,c,d,e,f}
     ''']
+
+[tasks.regenerate]
+description = "Regenerate Cargo.lock files"
+script = ['''
+#!/usr/bin/env fish
+
+for dir in (exa -D)
+    cd $dir
+    cargo generate-lockfile
+    cd ..
+end
+    '''
+]
