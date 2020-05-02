@@ -4,8 +4,21 @@ use competitive_hpp::prelude::*;
 #[fastout]
 fn main() {
     input! {
-        a: i32,
+        K:usize,
+        A:usize, B:usize
     }
 
-    println!("{}", a)
+    let mut tmp = K;
+    loop {
+        if tmp >= A && tmp <= B {
+            println!("OK");
+            break;
+        }
+
+        if tmp > B {
+            println!("NG");
+            break;
+        }
+        tmp += K;
+    }
 }

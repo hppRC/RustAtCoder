@@ -4,8 +4,17 @@ use competitive_hpp::prelude::*;
 #[fastout]
 fn main() {
     input! {
-        a: i32,
+        X: f64,
     }
-
-    println!("{}", a)
+    let mut cnt: f64 = 100f64;
+    let X: f64 = X;
+    let mut t = 0;
+    loop {
+        t += 1;
+        cnt = (cnt * 1.01f64).trunc();
+        if cnt >= X {
+            println!("{}", t);
+            break;
+        }
+    }
 }
