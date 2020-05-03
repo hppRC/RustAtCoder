@@ -4,8 +4,8 @@ use competitive_hpp::prelude::*;
 #[fastout]
 fn main() {
     input! {
-        a: i32,
+        S:String
     }
 
-    println!("{}", a)
+    println!("{}", if S == "ABC" { "ARC" } else { "ABC" })
 }

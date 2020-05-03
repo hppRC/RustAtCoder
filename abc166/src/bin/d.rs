@@ -4,8 +4,16 @@ use competitive_hpp::prelude::*;
 #[fastout]
 fn main() {
     input! {
-        a: i32,
+        X: i64,
     }
+    let X: i64 = X;
 
-    println!("{}", a)
+    'outer: for a in -200..200 {
+        for b in -200..200 {
+            if (a.pow(5) - b.pow(5)) == X {
+                println!("{} {}", a, b);
+                break 'outer;
+            }
+        }
+    }
 }
