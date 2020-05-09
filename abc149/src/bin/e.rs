@@ -4,7 +4,7 @@ use competitive_hpp::prelude::*;
 #[fastout]
 fn main() {
     input! {
-        N: usize, M: usize,
+        a: i32,
     }
 
     println!("{}", a)

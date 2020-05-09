@@ -4,8 +4,7 @@ use competitive_hpp::prelude::*;
 #[fastout]
 fn main() {
     input! {
-        N: usize, M: usize,
+        X: usize,
     }
-
-    println!("{}", a)
+    echo!((X..).find(|&i| i.is_prime()).unwrap());
 }

@@ -1,6 +1,5 @@
 #![allow(non_snake_case)]
 use competitive_hpp::prelude::*;
-use std::cmp::{max, min};
 
 #[fastout]
 fn main() {
@@ -9,42 +8,15 @@ fn main() {
         A: [isize; N],
     }
     let A: Vec<isize> = A;
+    let mut map: HashMap<isize, isize> = HashMap::new();
 
-    let mut vp: Vec<(isize, usize)> = A
-        .iter()
-        .enumerate()
-        .map(|(i, &j)| (i as isize + j, i))
-        .collect();
-    vp.sort_by_key(|&i| i.0);
+    let ans = A.iter().enumerate().fold(0, |acc, (i, &a)| {
+        let &tmp = map.get(&(i as isize - a)).unwrap_or(&0);
+        map.entry(i as isize + a)
+            .and_modify(|entry| *entry += 1)
+            .or_insert(1);
+        acc + tmp
+    });
 
-    let mut vm: Vec<(isize, usize)> = A
-        .iter()
-        .enumerate()
-        .map(|(i, &j)| (i as isize - j, i))
-        .collect();
-    vm.sort_by_key(|&i| i.0);
-
-    let mut ans: HashSet<(usize, usize)> = HashSet::new();
-
-    for (id, &length) in A.iter().enumerate() {
-        let query = id as isize - length;
-
-        if let Ok(v) = vp.binary_search_by_key(&query, |&k| k.0) {
-            let large = max(id, vp[v].1);
-            let small = min(id, vp[v].1);
-            ans.insert((small, large));
-        }
-    }
-
-    for (id, &length) in A.iter().enumerate() {
-        let query = id as isize + length;
-
-        if let Ok(v) = vm.binary_search_by_key(&query, |&k| k.0) {
-            let large = max(id, vm[v].1);
-            let small = min(id, vm[v].1);
-            ans.insert((small, large));
-        }
-    }
-
-    println!("{}", ans.len());
+    println!("{}", ans)
 }

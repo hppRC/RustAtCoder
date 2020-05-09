@@ -4,8 +4,9 @@ use competitive_hpp::prelude::*;
 #[fastout]
 fn main() {
     input! {
-        N: usize, M: usize,
+        S: String,
+        T: String,
     }
 
-    println!("{}", a)
+    echo!(T + &S);
 }

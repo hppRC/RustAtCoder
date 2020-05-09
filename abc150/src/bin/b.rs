@@ -4,8 +4,20 @@ use competitive_hpp::prelude::*;
 #[fastout]
 fn main() {
     input! {
-        a: i32,
+        _: usize,
+        S: Chars,
     }
 
-    println!("{}", a)
+    let S: Vec<char> = S;
+
+    println!(
+        "{}",
+        S.windows(3).fold(0, |acc, chars| {
+            if chars.into_iter().collect::<String>() == "ABC" {
+                acc + 1
+            } else {
+                acc
+            }
+        })
+    )
 }
