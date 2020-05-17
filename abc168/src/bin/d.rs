@@ -15,6 +15,7 @@ fn main() {
         g[a].push(b);
         g[b].push(a);
     }
+
     let mut visited: Vec<bool> = vec![false; N];
     let mut light_to: Vec<usize> = vec![0; N];
 
