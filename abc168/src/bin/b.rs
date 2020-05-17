@@ -6,8 +6,16 @@ use competitive_hpp::prelude::*;
 #[fastout]
 fn main() {
     input! {
-        a: i32,
+        K: usize,
+        S: String,
     }
 
-    println!("{}", a)
+    println!(
+        "{}",
+        if S.len() > K {
+            (&S[..K]).to_owned() + "..."
+        } else {
+            S
+        }
+    )
 }
