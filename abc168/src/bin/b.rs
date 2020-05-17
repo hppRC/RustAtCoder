@@ -10,10 +10,13 @@ fn main() {
         S: String,
     }
 
+    let K: usize = K;
+    let S: String = S;
+
     println!(
         "{}",
         if S.len() > K {
-            (&S[..K]).to_owned() + "..."
+            S[..K].to_owned() + "..."
         } else {
             S
         }
