@@ -1,0 +1,13 @@
+[package]
+name = "agc044"
+version = "0.1.0"
+authors = ["hppRC <hpp.ricecake@gmail.com>"]
+edition = "2018"
+
+# dependencies added to new project
+[dependencies]
+competitive-hpp = "*"
+
+[profile.release]
+lto = true
+panic = 'abort'
